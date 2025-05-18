@@ -6,43 +6,53 @@ import { motion } from 'framer-motion';
 
 const branches = [
   {
-    id: 'chapaevo',
-    name: 'Филиал Чапаево',
-    doctors: [
-      { id: 1, name: 'Акжигитова Гулим', specialization: 'Врач общей практики', experience: '8 лет опыта', photo: '/assets/doc2.png' },
-      { id: 2, name: 'Кожекенова Лаура', specialization: 'Врач дневного стационара', experience: '5 лет опыта', photo: '/assets/doc3.png' },
-      { id: 3, name: 'Жексенбиева Ляззат', specialization: 'Врач общей практики', experience: '10 лет опыта', photo: '/assets/doc1.png' },
-      { id: 10, name: 'Доп. врач', specialization: 'Терапевт', experience: '3 года', photo: '/assets/doc2.png' },
-    ],
-  },
-  {
     id: 'kyzyl',
     name: 'Филиал Кызыл Кайрат',
     doctors: [
-      { id: 4, name: 'Акжигитова Гулим', specialization: 'Врач общей практики', experience: '8 лет опыта', photo: '/assets/doc2.png' },
-      { id: 5, name: 'Кожекенова Лаура', specialization: 'Врач дневного стационара', experience: '5 лет опыта', photo: '/assets/doc3.png' },
-      { id: 6, name: 'Жексенбиева Ляззат', specialization: 'Врач общей практики', experience: '10 лет опыта', photo: '/assets/doc1.png' },
+      { id: 1, name: 'Акжигитова Гулим Мухамед-Алиевна', specialization: 'Врач общей практики', experience: '8 лет опыта', photo: '/assets/doc1-1.png' },
+      { id: 2, name: 'Кожекенова Лаура Машраповна', specialization: 'Врач дневного стационара', experience: '5 лет опыта', photo: '/assets/doc1-2.png' },
+      { id: 3, name: 'Ахметова Эльвира Мухамеджановна', specialization: 'Врач общей практики', experience: '10 лет опыта', photo: '/assets/doc1-3.png' },
+      { id: 4, name: 'Айтбаева Айгуль Кенесовна', specialization: 'УЗИ', experience: '3 года', photo: '/assets/doc1-4.png' },
+    ],
+  },
+  {
+    id: 'erai',
+    name: 'Филиал Ерай',
+    doctors: [
+      { id: 5, name: 'Оразымбетова Нагима Бахтиназаровна', specialization: 'Гастроэнтеролог, дерматолог', experience: '8 лет опыта', photo: '/assets/doc2-1.png' },
+      { id: 6, name: 'Жексенбиева Ляззат Токтарбековна', specialization: 'Врач общей практики', experience: '5 лет опыта', photo: '/assets/doc2-2.png' },
+      { id: 7, name: 'Рахимов Бериккали Баймухаметович', specialization: 'Стоматолог', experience: '10 лет опыта', photo: '/assets/doc2-3.png' },
+    ],
+  },
+  {
+    id: 'chapaevo',
+    name: 'Филиал Байкент',
+    doctors: [
+      { id: 8, name: 'Абижанова Рауза Тынысбековна', specialization: 'Старшая медсестра', experience: '8 лет опыта', photo: '/assets/doc3-1.png' },
+      { id: 9, name: 'Жунисханова Асель Сенгалиевна', specialization: 'Врач общей практики', experience: '5 лет опыта', photo: '/assets/doc3-2.png' },
+      { id: 10, name: 'Рахметова Гульнар Жолдасбаевна', specialization: 'Врач отоларинголог', experience: '10 лет опыта', photo: '/assets/doc3-3.png' },
+      { id: 11, name: 'Доп. врач', specialization: 'Терапевт', experience: '3 года', photo: '/assets/doc2.png' },
     ],
   },
   {
     id: 'dostyk',
     name: 'Филиал Достык',
     doctors: [
-      { id: 7, name: 'Акжигитова Гулим', specialization: 'Врач общей практики', experience: '8 лет опыта', photo: '/assets/doc2.png' },
-      { id: 8, name: 'Кожекенова Лаура', specialization: 'Врач дневного стационара', experience: '5 лет опыта', photo: '/assets/doc3.png' },
-      { id: 9, name: 'Жексенбиева Ляззат', specialization: 'Врач общей практики', experience: '10 лет опыта', photo: '/assets/doc1.png' },
+      { id: 12, name: 'Дуйсенбиева Елена Аскаровна', specialization: 'Врач общей практики', experience: '8 лет опыта', photo: '/assets/doc4-1.png' },
+      { id: 13, name: 'Баткалова Айгерим Ержановна', specialization: 'Старшая медсестра', experience: '5 лет опыта', photo: '/assets/doc4-2.png' },
+      { id: 14, name: 'Асанова Лаура Ауезхановна', specialization: 'Офтальмолог', experience: '10 лет опыта', photo: '/assets/doc3-3.png' },
     ],
   },
   {
     id: 'ultarakova',
     name: 'Филиал им. К. Ултаракова',
     doctors: [
-     { id: 10, name: 'Акжигитова Гулим', specialization: 'Врач общей практики', experience: '8 лет опыта', photo: '/assets/doc2.png' },
-      { id: 11, name: 'Кожекенова Лаура', specialization: 'Врач дневного стационара', experience: '5 лет опыта', photo: '/assets/doc3.png' },
-      { id: 12, name: 'Жексенбиева Ляззат', specialization: 'Врач общей практики', experience: '10 лет опыта', photo: '/assets/doc1.png' },
-      { id: 13, name: 'Акжигитова Гулим', specialization: 'Врач общей практики', experience: '8 лет опыта', photo: '/assets/doc2.png' },
-      { id: 14, name: 'Кожекенова Лаура', specialization: 'Врач дневного стационара', experience: '5 лет опыта', photo: '/assets/doc3.png' },
-      { id: 15, name: 'Жексенбиева Ляззат', specialization: 'Врач общей практики', experience: '10 лет опыта', photo: '/assets/doc1.png' },
+     { id: 15, name: 'Демиева Кулбаршын Абдибаевна', specialization: 'Старшая медсестра', experience: '8 лет опыта', photo: '/assets/doc5-1.png' },
+      { id: 16, name: 'Кабулов Амангелды Сабирович', specialization: 'Врач дневного стационара', experience: '5 лет опыта', photo: '/assets/doc5-2.png' },
+      { id: 17, name: 'Коптилеуова Клара Оракбаевна', specialization: 'Гинеколог ', experience: '10 лет опыта', photo: '/assets/doc5-3.png' },
+      { id: 18, name: 'Демиева Кулбаршын Абдибаевна', specialization: 'Старшая медсестра', experience: '8 лет опыта', photo: '/assets/doc5-1.png' },
+      { id: 19, name: 'Кабулов Амангелды Сабирович', specialization: 'Врач дневного стационара', experience: '5 лет опыта', photo: '/assets/doc5-2.png' },
+      { id: 20, name: 'Коптилеуова Клара Оракбаевна', specialization: 'Гинеколог', experience: '10 лет опыта', photo: '/assets/doc5-3.png' },
     ],
   },
 ];
