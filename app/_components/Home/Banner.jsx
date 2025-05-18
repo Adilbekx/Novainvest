@@ -37,11 +37,11 @@ const bannerSlides = [
 
 // Массив логотипов
 const logos = [
-  { src: "/assets/Hospital1.png", name: "ЦСЗ Жаханова" },
-  { src: "/assets/Hospital2.png", name: "ЦСЗ Ерай" },
-  { src: "/assets/Hospital3.png", name: "ЦСЗ Байкент" },
-  { src: "/assets/Hospital4.png", name: "ЦСЗ Достык" },
-  { src: "/assets/Hospital5.png", name: "ЦСЗ УЛТАРАКОВА" },
+  { src: "/assets/news1.jpeg", name: "ЦСЗ Жаханова" },
+  { src: "/assets/news3.jpeg", name: "ЦСЗ Ерай" },
+  { src: "/assets/news4.jpeg", name: "ЦСЗ Байкент" },
+  { src: "/assets/news3.jpeg", name: "ЦСЗ Достык" },
+  { src: "/assets/news1.jpeg", name: "ЦСЗ УЛТАРАКОВА" },
 ];
 
 const Banner = () => {
@@ -77,7 +77,7 @@ const Banner = () => {
                       className="bg-[#20aa99] hover:bg-[#0b6a5e] hover:scale-97 transition-all duration-300"
                     >
                       <a
-                        href="https://wa.me/87064007107?text=Здравствуйте,%20хочу%20записаться!"
+                        href="/contact"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -113,29 +113,30 @@ const Banner = () => {
 
       {/* Бегущая лента логотипов */}
 
-      <div className="container overflow-hidden py-10">
-        <div className="flex animate-scroll space-x-10">
-          {logos.map((logo, index) => (
+          <div className="overflow-hidden py-12 bg-[#f9fdfa]">
+      <div className="whitespace-nowrap animate-slide flex space-x-10">
+        {[...Array(3)].flatMap((_, i) =>
+          logos.map((logo, index) => (
             <div
-              key={index}
-              className="flex flex-col items-center min-w-[150px]"
+              key={`${i}-${index}`}
+              className="flex flex-col items-center min-w-[180px] px-2 transition-transform hover:scale-105"
             >
-              <Image src={logo.src} width={100} height={50} alt="logo" />
-              <span className="mt-2">{logo.name}</span>
+              <div className="w-[150px] h-[100px] relative rounded-lg shadow-md overflow-hidden bg-white">
+                <Image
+                  src={logo.src}
+                  alt={logo.name}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <span className="mt-3 text-[#20aa99] font-semibold text-center">
+                {logo.name}
+              </span>
             </div>
-          ))}
-          {/* Повторяем лого, чтобы заполнили экран */}
-          {logos.map((logo, index) => (
-            <div
-              key={index + 5}
-              className="flex flex-col items-center min-w-[150px]"
-            >
-              <Image src={logo.src} width={100} height={50} alt="logo" />
-              <span className="mt-2">{logo.name}</span>
-            </div>
-          ))}
-        </div>
+          ))
+        )}
       </div>
+    </div>
     </div>
   );
 };

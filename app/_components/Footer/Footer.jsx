@@ -28,11 +28,11 @@ const Footer = () => {
             </li>
             <li className="flex items-center gap-2">
               <MdPhone className="text-xl text-green-500" />
-              +7 777 777 77 77
+              +7 (702) 154-81-50
             </li>
             <li className="flex items-center gap-2">
               <MdEmail className="text-xl text-green-500" />
-              info@eln.kz
+              support@eln.kz
             </li>
           </ul>
         </div>

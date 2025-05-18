@@ -6,24 +6,24 @@ import Link from "next/link";
 const doctors = [
   {
     id: 1,
-    name: "Фамилия Имя Отчество",
-    specialization: "Терапевт",
-    experience: "5 лет опыта",
-    photo: "/assets/about-banner3.png",
+    name: "Акжигитова Гулим Мухамед-Алиевна​",
+    specialization: "Врач общей практики",
+    experience: "8 лет опыта",
+    photo: "/assets/doc2.png",
   },
   {
     id: 2,
-    name: "Фамилия Имя Отчество",
-    specialization: "Хирург",
-    experience: "8 лет опыта",
-    photo: "/assets/about-banner.png",
+    name: "Кожекенова Лаура Машраповна​",
+    specialization: "Врач дневного стационара",
+    experience: "5 лет опыта",
+    photo: "/assets/doc3.png",
   },
   {
     id: 3,
-    name: "Фамилия Имя Отчество",
-    specialization: "Кардиолог",
+    name: "Жексенбиева Ляззат Токтарбековна​",
+    specialization: "Врач общей практики",
     experience: "10 лет опыта",
-    photo: "/assets/about-banner2.png",
+    photo: "/assets/doc1.png",
   },
   
 ];

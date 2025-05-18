@@ -159,15 +159,29 @@ body {
 span {
   color: #20aa99;
 }
-@keyframes scroll {
+@keyframes slide {
   0% {
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-33.333%);
   }
 }
 
-.animate-scroll {
-  animation: scroll 25s linear infinite;
+.animate-slide {
+  animation: slide 15s linear infinite;
+}
+
+/* Кастомный скроллбар для WebKit браузеров */
+.your-scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+.your-scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+.your-scroll-container::-webkit-scrollbar-thumb {
+  background-color: #20aa99;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  background-clip: content-box;
 }
