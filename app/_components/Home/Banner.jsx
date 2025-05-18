@@ -19,19 +19,19 @@ const bannerSlides = [
     subtitle: "- Лучшие решения для здоровья",
     description:
       "Мы предоставляем лучшие медицинские услуги для вас и вашей семьи.",
-    image: "/assets/about-banner.png",
+    image: "/assets/doc3.png",
   },
   {
     title: "Мы рядом, когда вы нуждаетесь",
     subtitle: "- Ваше здоровье — наш приоритет",
     description: "Доверьтесь нашим опытным врачам и современным технологиям.",
-    image: "/assets/about-banner2.png",
+    image: "/assets/doc2.png",
   },
   {
     title: "Быстрая помощь и забота",
     subtitle: "- Качество и забота",
     description: "Мы стремимся обеспечить лучший уход для каждого пациента.",
-    image: "/assets/about-banner3.png",
+    image: "/assets/doc1.png",
   },
 ];
 
