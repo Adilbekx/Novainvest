@@ -169,7 +169,7 @@ span {
 }
 
 .animate-slide {
-  animation: slide 15s linear infinite;
+  animation: slide 10s linear infinite;
 }
 
 /* Кастомный скроллбар для WebKit браузеров */

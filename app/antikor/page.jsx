@@ -3,20 +3,17 @@
 import { FileText } from 'lucide-react'; 
 
 const documents = [
-  { title: 'Прайс-лист на услуги', file: '/docs/price-list.pdf' },
-  { title: 'График работы врачей', file: '/docs/schedule.pdf' },
-  { title: 'Правила посещения клиники', file: '/docs/rules.pdf' },
-  { title: 'Форма согласия на обработку данных', file: '/docs/consent-form.pdf' },
+  { title: 'ПОРЯДОК информирования работниками ТОО «El Aman Nova Invest» о фактах или возможных нарушениях антикоррупционного законодательства', file: '/docs/Antikor/pikp.pdf' },
 ];
 
 export default function DocsPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-16">
       <h1 className="text-4xl font-extrabold text-black mb-6 text-center">
-        Документы и Объявления
+        Антикоррупционная политика
       </h1>
       <p className="text-gray-600 text-lg mb-10 text-center">
-        Здесь вы найдёте важные документы, формы и актуальные объявления нашей клиники.
+        Здесь вы найдёте важные документы, касающиеся антикоррупционной политики нашей клиники.
       </p>
 
       <ul className="space-y-6">

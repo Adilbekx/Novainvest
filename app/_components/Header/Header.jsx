@@ -21,6 +21,22 @@ import {
   AcademicCapIcon,
   HeartIcon,
   PhoneIcon,
+  DocumentTextIcon,
+  UserGroupIcon,
+  IdentificationIcon,
+  ScaleIcon,
+  ClipboardDocumentCheckIcon,
+  BuildingOffice2Icon,
+  ChartBarIcon,
+  ChatBubbleBottomCenterTextIcon,
+  BriefcaseIcon,
+  ShoppingCartIcon,
+  BanknotesIcon,
+  WrenchScrewdriverIcon,
+  CurrencyDollarIcon,
+  ShieldCheckIcon,
+  MapIcon,
+  MegaphoneIcon,
 } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import React from "react";
@@ -42,12 +58,68 @@ const navigation = [
     ],
   },
   { name: "Врачи", href: "/doctors" },
-  { name: "Контакты", href: "/contact" }, 
+  { name: "Контакты", href: "/contact" },
+    {
+    name: "О нас",
+    submenu: [
+      {
+        name: "Общее положение",
+        href: "/general",
+        icon: DocumentTextIcon,
+      },
+      {
+        name: "Администрация",
+        href: "administration",
+        icon: UserGroupIcon,
+      },
+      {
+        name: "Корпоративные документы",
+        href: "/corporateDoc",
+        icon: ClipboardDocumentCheckIcon,
+      },
+      {
+        name: "Миссия, видение и ценности",
+        href: "/mission",
+        icon: ScaleIcon,
+      },
+      {
+        name: "Лицензии, дипломы, сертификаты и аккредитация",
+        href: "/licenses",
+        icon: IdentificationIcon,
+      },
+      {
+        name: "Организационная структура",
+        href: "/docs/Structure/struktura.pdf",
+        target: "_blank",
+        icon: BuildingOffice2Icon,
+      },
+      {
+        name: "Корпоративное управление",
+        href: "/about/governance",
+        icon: ChartBarIcon,
+      },
+      {
+        name: "Общественная приёмная (Open Space)",
+        href: "/about/open-space",
+        icon: ChatBubbleBottomCenterTextIcon,
+      },
+      {
+        name: "Финансовые и годовые отчёты",
+        href: "/about/financial-reports",
+        icon: BanknotesIcon,
+      },
+      {
+        name: "Антикоррупционная политика",
+        href: "/antikor",
+        icon: ShieldCheckIcon,
+      },
+    ],
+  },
 ];
 
-
-
 function MobileMenu({ mobileMenuOpen, setMobileMenuOpen }) {
+  const [openMenu, setOpenMenu] = useState(null);
+
   return (
     <Dialog
       open={mobileMenuOpen}
@@ -72,49 +144,51 @@ function MobileMenu({ mobileMenuOpen, setMobileMenuOpen }) {
 
         <div className="mt-6 space-y-6">
           {navigation.map((item) => (
-  <div key={item.name}>
-    {item.submenu ? (
-      <div>
-        <div className="font-medium text-gray-900">{item.name}</div>
-        <div className="ml-4 mt-2 space-y-2">
-          {item.submenu.map((subItem) => (
-            <a
-              key={subItem.name}
-              href={subItem.href}
-              className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#20aa99]"
-            >
-              {React.createElement(subItem.icon, {
-                className: "h-5 w-5 text-[#20aa99]",
-              })}
-              {subItem.name}
-            </a>
+            <div key={item.name}>
+              {item.submenu ? (
+                <div>
+                  <button
+                    onClick={() =>
+                      setOpenMenu(openMenu === item.name ? null : item.name)
+                    }
+                    className="flex justify-between items-center w-full text-left font-medium text-gray-900 py-2"
+                  >
+                    {item.name}
+                    <ChevronDownIcon
+                      className={`h-5 w-5 transform transition-transform ${
+                        openMenu === item.name ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {openMenu === item.name && (
+                    <div className="ml-4 mt-2 space-y-1">
+                      {item.submenu.map((subItem) => (
+                        <a
+                          key={subItem.name}
+                          href={subItem.href}
+                          onClick={() => setMobileMenuOpen(false)} // Автозакрытие меню
+                          className="flex items-center gap-2 text-xs text-gray-700 hover:text-[#20aa99] px-2 py-1"
+                        >
+                          {React.createElement(subItem.icon, {
+                            className: "h-4 w-4 text-[#20aa99] shrink-0",
+                          })}
+                          <span>{subItem.name}</span>
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <a
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-sm font-medium text-gray-900 hover:text-[#20aa99]"
+                >
+                  {item.name}
+                </a>
+              )}
+            </div>
           ))}
-        </div>
-      </div>
-    ) : item.scrollToId ? (
-      <button
-        onClick={() => {
-          const el = document.getElementById(item.scrollToId);
-          if (el) {
-            el.scrollIntoView({ behavior: "smooth" });
-            setMobileMenuOpen(false); // Закрыть меню после прокрутки
-          }
-        }}
-        className="text-sm font-medium text-gray-900 hover:text-[#20aa99] cursor-pointer bg-transparent border-none p-0"
-      >
-        {item.name}
-      </button>
-    ) : (
-      <a
-        href={item.href}
-        className="text-sm font-medium text-gray-900 hover:text-[#20aa99]"
-      >
-        {item.name}
-      </a>
-    )}
-  </div>
-))}
-
         </div>
 
         {/* Телефон */}
@@ -126,25 +200,14 @@ function MobileMenu({ mobileMenuOpen, setMobileMenuOpen }) {
               href="tel:+77000000000"
               className="text-sm text-gray-800 leading-none"
             >
-                    +7 (702) 154-81-50    {" "}
+                    +7 (708) 030-78-42    {" "}
             </a>
                {" "}
             <span className="text-xs text-[#20aa99] leading-none mt-0.5">
-              Поддержка
+              Служба поддержки пациентов
             </span>
              {" "}
           </div>
-        </div>
-
-        <div className="mt-4">
-          <a
-            href="https://wa.me/77000000000?text=Здравствуйте,%20хочу%20записаться!"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full text-center rounded-full bg-[#20aa99] px-4 py-2 text-white font-semibold hover:bg-[#1e9989] transition"
-          >
-            Записаться
-          </a>
         </div>
       </DialogPanel>
     </Dialog>
@@ -152,57 +215,62 @@ function MobileMenu({ mobileMenuOpen, setMobileMenuOpen }) {
 }
 
 function DesktopMenu() {
-  const handleScroll = (id) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
+  const [openMenu, setOpenMenu] = useState(null);
+
+  const toggleMenu = (name) => {
+    setOpenMenu(openMenu === name ? null : name);
   };
+
+  const closeAll = () => setOpenMenu(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest(".desktop-menu")) {
+        closeAll();
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
+
   return (
-    <PopoverGroup className="hidden lg:flex lg:gap-x-10">
+    <div className="hidden lg:flex lg:gap-x-6 desktop-menu relative">
       {navigation.map((item) =>
         item.submenu ? (
-          // Твой код для подменю без изменений
-          <Popover key={item.name} className="relative">
-            <PopoverButton className="flex items-center gap-1 text-lg font-medium text-gray-800 hover:text-[#20aa99] transition">
-              {item.name}
-              <ChevronDownIcon className="h-5 w-5" />
-            </PopoverButton>
-            <Transition
-              as={Fragment}
-              enter="transition ease-out duration-200"
-              enterFrom="opacity-0 translate-y-1"
-              enterTo="opacity-100 translate-y-0"
-              leave="transition ease-in duration-150"
-              leaveFrom="opacity-100 translate-y-0"
-              leaveTo="opacity-0 translate-y-1"
+          <div key={item.name} className="relative">
+            <button
+              onClick={() => toggleMenu(item.name)}
+              className="flex items-center gap-1 text-lg font-medium text-gray-800 hover:text-[#20aa99] transition"
             >
-              <PopoverPanel className="absolute z-30 mt-3 w-64 origin-top rounded-xl bg-white p-4 shadow-xl ring-1 ring-gray-900/10">
-                <div className="flex flex-col gap-4">
+              {item.name}
+              <ChevronDownIcon
+                className={`h-5 w-5 transform transition-transform ${
+                  openMenu === item.name ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+
+            {openMenu === item.name && (
+              <div className="absolute z-30 mt-2 w-[280px] bg-white rounded-lg shadow-lg ring-1 ring-black/10 p-2">
+                <div className="flex flex-col divide-y divide-gray-100">
                   {item.submenu.map((subItem) => (
                     <a
                       key={subItem.name}
                       href={subItem.href}
-                      className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-100 transition"
+                      className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition"
+                      onClick={closeAll}
                     >
                       {React.createElement(subItem.icon, {
-                        className: "h-6 w-6 text-[#20aa99]",
+                        className: "h-5 w-5 text-[#20aa99]",
                       })}
-                      <span className="text-gray-700">{subItem.name}</span>
+                      <span>{subItem.name}</span>
                     </a>
                   ))}
                 </div>
-              </PopoverPanel>
-            </Transition>
-          </Popover>
-        ) : item.scrollToId ? (
-          <button
-            key={item.name}
-            onClick={() => handleScroll(item.scrollToId)}
-            className="text-lg font-medium text-gray-800 hover:text-[#20aa99] transition cursor-pointer bg-transparent border-none p-0"
-          >
-            {item.name}
-          </button>
+              </div>
+            )}
+          </div>
         ) : (
           <a
             key={item.name}
@@ -213,9 +281,10 @@ function DesktopMenu() {
           </a>
         )
       )}
-    </PopoverGroup>
+    </div>
   );
 }
+
 
 export default function Header() {
   const [showHeader, setShowHeader] = useState(true);
@@ -258,16 +327,10 @@ export default function Header() {
             >
               +7 (702) 154-81-50
             </a>
-            <span className="text-xs text-[#20aa99]">Поддержка</span>
+            <span className="text-xs text-[#20aa99]">
+              Служба поддержки пациентов
+            </span>
           </div>
-          <a
-            href="https://wa.me/77000000000?text=Здравствуйте,%20хочу%20записаться!"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full border border-[#20aa99] px-5 py-2 text-sm font-semibold text-[#20aa99] hover:bg-[#20aa99] hover:text-white transition"
-          >
-            Записаться
-          </a>
         </div>
 
         <div className="lg:hidden">

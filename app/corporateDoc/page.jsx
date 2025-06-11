@@ -3,20 +3,20 @@
 import { FileText } from 'lucide-react'; 
 
 const documents = [
-  { title: 'Прайс-лист на услуги', file: '/docs/price-list.pdf' },
-  { title: 'График работы врачей', file: '/docs/schedule.pdf' },
-  { title: 'Правила посещения клиники', file: '/docs/rules.pdf' },
-  { title: 'Форма согласия на обработку данных', file: '/docs/consent-form.pdf' },
+  { title: 'Устав', file: '/docs/price-list.pdf' },
+  { title: 'Реквезиты', file: '/docs/rekvz.pdf' },
+  { title: 'План развития', file: '/docs/rules.pdf' },
+  { title: 'Государственная регистрация', file: '/docs/gosReg.pdf' },
 ];
 
 export default function DocsPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-16">
       <h1 className="text-4xl font-extrabold text-black mb-6 text-center">
-        Документы и Объявления
+        Корпоративные документы
       </h1>
       <p className="text-gray-600 text-lg mb-10 text-center">
-        Здесь вы найдёте важные документы, формы и актуальные объявления нашей клиники.
+        Здесь вы найдёте важные документы нашей клиники.
       </p>
 
       <ul className="space-y-6">

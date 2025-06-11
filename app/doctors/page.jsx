@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 const branches = [
   {
     id: 'kyzyl',
-    name: 'Филиал Кызыл Кайрат',
+    name: 'ЦСЗ Кызыл Кайрат',
     doctors: [
       { id: 1, name: 'Акжигитова Гулим Мухамед-Алиевна', specialization: 'Врач общей практики', experience: '8 лет опыта', photo: '/assets/doc1-1.png' },
       { id: 2, name: 'Кожекенова Лаура Машраповна', specialization: 'Врач дневного стационара', experience: '5 лет опыта', photo: '/assets/doc1-2.png' },
@@ -17,7 +17,7 @@ const branches = [
   },
   {
     id: 'erai',
-    name: 'Филиал Ерай',
+    name: 'ЦСЗ Ерай',
     doctors: [
       { id: 5, name: 'Оразымбетова Нагима Бахтиназаровна', specialization: 'Гастроэнтеролог, дерматолог', experience: '8 лет опыта', photo: '/assets/doc2-1.png' },
       { id: 6, name: 'Жексенбиева Ляззат Токтарбековна', specialization: 'Врач общей практики', experience: '5 лет опыта', photo: '/assets/doc2-2.png' },
@@ -26,7 +26,7 @@ const branches = [
   },
   {
     id: 'chapaevo',
-    name: 'Филиал Байкент',
+    name: 'ЦСЗ Байкент',
     doctors: [
       { id: 8, name: 'Абижанова Рауза Тынысбековна', specialization: 'Старшая медсестра', experience: '8 лет опыта', photo: '/assets/doc3-1.png' },
       { id: 9, name: 'Жунисханова Асель Сенгалиевна', specialization: 'Врач общей практики', experience: '5 лет опыта', photo: '/assets/doc3-2.png' },
@@ -36,7 +36,7 @@ const branches = [
   },
   {
     id: 'dostyk',
-    name: 'Филиал Достык',
+    name: 'ЦСЗ Достык',
     doctors: [
       { id: 12, name: 'Дуйсенбиева Елена Аскаровна', specialization: 'Врач общей практики', experience: '8 лет опыта', photo: '/assets/doc4-1.png' },
       { id: 13, name: 'Баткалова Айгерим Ержановна', specialization: 'Старшая медсестра', experience: '5 лет опыта', photo: '/assets/doc4-2.png' },
@@ -45,7 +45,7 @@ const branches = [
   },
   {
     id: 'ultarakova',
-    name: 'Филиал им. К. Ултаракова',
+    name: 'ЦСЗ им. К. Ултаракова',
     doctors: [
      { id: 15, name: 'Демиева Кулбаршын Абдибаевна', specialization: 'Старшая медсестра', experience: '8 лет опыта', photo: '/assets/doc5-1.png' },
       { id: 16, name: 'Кабулов Амангелды Сабирович', specialization: 'Врач дневного стационара', experience: '5 лет опыта', photo: '/assets/doc5-2.png' },
